@@ -25,5 +25,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!#リダイレクト先のページに移動
     assert_template "users/show"#users/showビューであるか確認
+    assert_not flash.empty?
   end
 end
