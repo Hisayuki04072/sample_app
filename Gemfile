@@ -16,6 +16,7 @@ gem "puma",            "5.6.8"
 gem "bootsnap",        "1.16.0", require: false
 gem "sqlite3",         "1.6.1"
 gem "concurrent-ruby", "1.3.4"
+gem "pg", "1.3.5"
 
 group :development, :test do
   gem 'reline', '0.5.10'
