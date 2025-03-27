@@ -5,4 +5,5 @@ Rails.application.routes.draw do #to rails
   get "/contact", to:"static_pages#contact"
   root "static_pages#home"
   get "/signup", to:"users#new"#signup_pathが使えるように
+  resources :users
 end
