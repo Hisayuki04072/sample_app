@@ -21,7 +21,6 @@ gem "pg", "1.3.5"
 group :development, :test do
   gem 'reline', '0.5.10'
   gem "debug",   "1.7.1", platforms: %i[ mri mingw x64_mingw ]
-  gem "pg", "1.3.5"
 end
 
 group :development do
