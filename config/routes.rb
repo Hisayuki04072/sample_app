@@ -5,5 +5,8 @@ Rails.application.routes.draw do #to rails
   get "/contact", to:"static_pages#contact"
   root "static_pages#home"
   get "/signup", to:"users#new"#signup_pathが使えるように
+  get "/login", to:"sessions#new"
+  post "/login", to:"sessions#create"
+  delete "/logout", to:"sessions#destroy"
   resources :users
 end

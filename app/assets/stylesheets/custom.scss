@@ -63,7 +63,7 @@ p {
   padding-top: 9px;
   font-weight: bold;
   &:hover{
-    color: white;
+    color: red;
     text-decoration: none;
   }
 }
@@ -88,6 +88,23 @@ footer {
     li {
       float: left;
       margin-left: 15px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  footer {
+    small {
+      display: block;
+      float: none;
+      margin-bottom: 1em;
+    }
+    ul {
+      float: none;
+      padding: 0;
+      li {
+        float: none;
+        margin-left: 0;
+      }
     }
   }
 }
@@ -158,4 +175,8 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.dropdown-menu.active {
+  display: block;
 }
