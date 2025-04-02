@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       reset_session
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user#==redirect_to user_url(@user)
+      redirect_to @user#redirect_to user_url(@user)
     else
       render "new", status: :unprocessable_entity#??
     end

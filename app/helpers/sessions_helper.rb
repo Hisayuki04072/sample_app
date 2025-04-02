@@ -20,7 +20,7 @@ module SessionsHelper
             user = User.find_by(id: user_id)
             if user && user.authenticated?(cookies[:remember_token])
                 log_in user
-                @currnet_user = user
+                @current_user = user
             end
         end
     end
@@ -34,7 +34,7 @@ module SessionsHelper
     end
 
     def forget(user)
-        user.forget
+        user.forget#remember_digestをnilにする
         cookies.delete(:user_id)
         cookies.delete(:remember_token)
     end

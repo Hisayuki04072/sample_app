@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    update_attribute(:remember_digest, User.digest(remember_token))#attr_accessorのremember_tokenメソッド、
     remember_digest
   end
 
@@ -27,7 +27,7 @@ class User < ApplicationRecord
     remember_digest || remember
   end
 
-  def authenticated?(remember_token)#attr_accessorで定義したものとは異なる→ただの関数の引数だと
+  def authenticated?(remember_token)#このremember_tokenはattr_accessorで定義したものと異なる→だたの関数の引数
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
