@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum:255}, format: {with: VALID_EMAIL_REGEX }, uniqueness: true
   has_secure_password
   validates :password, presence: true, length: {minimum: 8}, allow_nil: true
+  has_many :microposts, dependent: :destroy
 
   #渡された文字列のハッシュ値を返す
   def User.digest(string)
@@ -61,6 +62,10 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+  
   private
     def downcase_email
       email.downcase!
