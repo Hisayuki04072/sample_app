@@ -15,13 +15,13 @@ class MicropostsInterfaceTest < MicropostsInterface
     assert_select 'div.pagination'
   end
 
-#  test "should show errors but not create micropost on invalid submission" do
-#    assert_no_difference 'Micropost.count' do
-#      post microposts_path, params: { micropost: { content: "" } }
-#    end
-#    assert_select 'div#error_explanation'
-#    assert_select 'a[href=?]', '/?page=2'  # 正しいページネーションリンク
-#  end
+  test "should show errors but not create micropost on invalid submission" do
+    assert_no_difference 'Micropost.count' do
+      post microposts_path, params: { micropost: { content: "" } }
+    end
+    assert_select 'div#error_explanation'
+    assert_select 'a[href=?]', '/?page=2'  # 正しいページネーションリンク
+  end
 
   test "should create a micropost on valid submission" do
     content = "This micropost really ties the room together"
